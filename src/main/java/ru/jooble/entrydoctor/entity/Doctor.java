@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "doctor")
 public class Doctor extends BaseEntity {
 
     @Column(name = "first_name")

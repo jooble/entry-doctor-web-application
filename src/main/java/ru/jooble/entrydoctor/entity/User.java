@@ -1,15 +1,15 @@
 package ru.jooble.entrydoctor.entity;
 
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "user")
 public class User extends BaseEntity {
+    @Column(name = "login")
     private String login;
+    @Column(name = "password")
     private String password;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "user")

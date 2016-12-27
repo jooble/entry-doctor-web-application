@@ -5,6 +5,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "user_role")
 public class UserRole extends BaseEntity {
+    @Column(name = "name")
     private String name;
 
     @ManyToOne(fetch = FetchType.LAZY)
