@@ -11,7 +11,7 @@ public class InitConfig
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[]{SecurityConfig.class, WebAppConfig.class, RepositoryConfig.class};
+        return new Class[]{SecurityConfig.class, WebAppConfig.class, RepositoryConfig.class, JacksonConfig.class};
     }
 
     @Override
