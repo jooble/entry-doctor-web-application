@@ -25,9 +25,9 @@ public class RepositoryConfig {
     public DataSource dataSource() {
         EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
         EmbeddedDatabase db = builder
-                .setType(EmbeddedDatabaseType.HSQL)
-                .addScript("resources/database/create.sql")
-                .addScript("resources/database/insert.sql")
+                .setType(EmbeddedDatabaseType.H2)
+                .setScriptEncoding("UTF-8")
+                .addScript("/database/create-init.sql")
                 .build();
         return db;
     }

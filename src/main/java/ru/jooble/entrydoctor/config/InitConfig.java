@@ -6,12 +6,12 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 import javax.servlet.Filter;
 
-public class InitConfig
-        extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class InitConfig extends
+        AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[]{SecurityConfig.class, WebAppConfig.class, RepositoryConfig.class, JacksonConfig.class};
+        return new Class[]{RepositoryConfig.class, WebAppConfig.class, SecurityConfig.class};
     }
 
     @Override
@@ -26,11 +26,13 @@ public class InitConfig
 
     @Override
     protected Filter[] getServletFilters() {
-
-        CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
-        characterEncodingFilter.setEncoding("UTF-8");
+        CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter();
+        encodingFilter.setEncoding("UTF-8");
+        encodingFilter.setForceEncoding(true);
 
         DelegatingFilterProxy delegatingFilterProxy = new DelegatingFilterProxy("springSecurityFilterChain");
-        return new Filter[]{characterEncodingFilter, delegatingFilterProxy};
+
+        return new Filter[]{encodingFilter, delegatingFilterProxy};
     }
+
 }

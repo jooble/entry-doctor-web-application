@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 @Table(name = "schedule")
 public class Schedule extends BaseEntity {
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "doctor_id")
     private Doctor doctor;
     @Column(name = "day")
@@ -19,7 +19,7 @@ public class Schedule extends BaseEntity {
     @Column(name = "period_end")
     private LocalDateTime periodEnd;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User user;
 

@@ -5,7 +5,7 @@ import ru.jooble.entrydoctor.entity.Doctor;
 import java.util.List;
 
 public interface DoctorService {
-    Doctor findUser(Long id);
+    Doctor findDoctor(Long id);
 
     List<Doctor> findAll();
 

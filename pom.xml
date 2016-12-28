@@ -22,7 +22,6 @@
             <version>${spring.security}</version>
         </dependency>
 
-
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
@@ -84,18 +83,6 @@
         </dependency>
 
         <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-core</artifactId>
-            <version>${jackson}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>${jackson}</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
             <version>${spring.data.jpa}</version>
@@ -105,12 +92,25 @@
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <version>${h2}</version>
+            <scope>runtime</scope>
         </dependency>
 
         <dependency>
-            <groupId>com.fasterxml.jackson.datatype</groupId>
-            <artifactId>jackson-datatype-jsr310</artifactId>
-            <version>${jsr.310}</version>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>${jstl}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>${spring.taglibs}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sargue</groupId>
+            <artifactId>java-time-jsptags</artifactId>
+            <version>${time.jsp.tag}</version>
         </dependency>
     </dependencies>
 
@@ -146,14 +146,15 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.version>4.3.3.RELEASE</spring.version>
         <spring.security>4.2.0.RELEASE</spring.security>
+        <spring.taglibs>4.2.1.RELEASE</spring.taglibs>
         <spring.data.jpa>1.10.4.RELEASE</spring.data.jpa>
         <persistence.api>1.0.2</persistence.api>
         <common.dbcp>1.4</common.dbcp>
         <hibernate>5.2.3.Final</hibernate>
-        <jackson>2.8.4</jackson>
         <h2>1.4.193</h2>
         <javax.servlet>3.0.1</javax.servlet>
         <junit>4.12</junit>
-        <jsr.310>2.8.5</jsr.310>
+        <time.jsp.tag>1.1.2</time.jsp.tag>
+        <jstl>1.2</jstl>
     </properties>
 </project>
